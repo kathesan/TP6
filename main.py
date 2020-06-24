@@ -26,7 +26,7 @@ class CompteBancaire :
 
   def depot(self, somme):
 
-    self.solde = self.solde + some
+    self.solde = self.solde + somme
 
   def retrait(self, somme):
 
@@ -37,6 +37,29 @@ class CompteBancaire :
     print("Le solde bancaire de ", self.nom , " est de : " , self.solde)
 
 
+class voiture :
+
+  def __init__(self, marque = "Ford", couleur = "rouge", pilote = "personne", vitesse = 0):
+
+      self.marque = marque
+      self.couleur = couleur
+      self.pilote = pilote
+      self.vitesse = vitesse
+      
+  def choix_conducteur(self, nom):
+
+    self.pilote = nom
+
+  def accelerer(self, taux, duree):  
+
+    self.vitesse = taux * duree
+
+  def afficher(self):  
+
+    print(self.marque,self.couleur, "pilotee par",self.pilote,", vitesse =", self.vitesse, "m/s")
+
+
+
 d1 = Domino(2,6)
 
 d2 = Domino(4,3)
@@ -44,12 +67,16 @@ d2 = Domino(4,3)
 print("total des points " , d1.valeur() + d2.valeur())
 
 compte1 = CompteBancaire("Duchmol", 800)
-compte1.retrait(300)
 compte1.affiche()
 compte2 = CompteBancaire()
 compte2.affiche()
 
+v1 = voiture("Peugeot", "bleu")
+v1.choix_conducteur("Juliette")
+v1.accelerer(1.3, 20)
+v1.afficher()
 
-
+v2 = voiture (couleur='verte')
+v2.afficher()
 
 
